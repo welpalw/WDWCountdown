@@ -1,0 +1,33 @@
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;   
+}
+body {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 3rem;
+}
+.mycountdown{
+    min-height: 100 vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.countdown{
+   display: flex;
+   justify-content: space-evenly;
+   text-align: center;
+}
+.Days, .Hours, .Minutes, .Seconds{
+  font-size: 2rem;  
+}
+.Mickey{
+    height: 40vh;
+    padding: 2rem;
+}

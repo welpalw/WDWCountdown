@@ -1,14 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv=""X-UA-Compatible" content=""IE-edge" /
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown to My Walt Disney World Vacation</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WDWCountdown</title>
+  <!--adding the following lines of code before stylesheet to see if input form will show up on page-->
+  <script>
+    var eventDate;
+    var eventMonth, eventDay, eventYear;
+    function getInput () {
+    eventMonth = prompt("Enter the Month Your Vacation Begins (1 to 12)", "1");
+    eventDay = prompt("Enter the Day Your Vacation Begins (1 to 31)", "1");
+    eventYear = prompt("Enter the Year Your Vacation Begins", "2024");
+    eventDate = new Date(eventMonth +  eventDay +  eventYear);
+    }
+
+
+
+</script>
   <link rel="stylesheet" href="./style.css" />
 </head>
-<body>
-  <script src="app.js"</script>  
+<body onload="getInput ();">
+    <section class="mycountdown">
+      <div>
+        <h2>Counting the Days Until My Walt Disney World Vacation</h2>  
+        <div class="countdown">
+            <div class="container-Days">
+                <h3 class="Days">Time</h3>
+                <h3>Days</h3>
+            </div>
+            <div class="container-Hours">
+                <h3 class="Hours">Time</h3>
+                <h3>Hours</h3>
+            </div>
+            <div class="container-Minutes">
+                <h3 class="Minutes">Time</h3>
+                <h3>Minutes</h3>
+            </div>
+            <div class="container-Seconds">
+            <h3 class="Seconds">Time</h3>
+            <h3>Seconds</h3>
+            </div> 
+        </div>
+    </div> 
+    <img class="Mickey" src="CountdownImages/MickeyMouse.jpg" alt="Mickey Mouse welcomes you home!" width="300" height="300" />
+    </section>
+  <script src="app.js"></script>  
 </body>
-
 </html>

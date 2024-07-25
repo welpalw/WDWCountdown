@@ -1,33 +1,47 @@
 * {
- margin: 0;
- padding: 0;
- box-sizing: border-box;   
-}
-body {
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-}
-
-h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    padding: 3rem;
-}
-.mycountdown{
-    min-height: 100 vh;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Verdana, Tahoma, Arial, sans-serif;
+    background-image: url("images/castle.jpg"); alt:"Cinderella Castle in shades of blue and pink at Walt Disney World" title="Cinderella Castle in shades of blue and pink at Walt Disney World";
+    background-size: cover;
+    background-position: center center;
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-}
-.countdown{
-   display: flex;
-   justify-content: space-evenly;
-   text-align: center;
-}
-.Days, .Hours, .Minutes, .Seconds{
-  font-size: 2rem;  
-}
-.Mickey{
-    height: 40vh;
-    padding: 2rem;
-}
+
+    min-height: 100vh;
+    margin: 0; 
+  }
+  h1 {
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    border-radius: 20px;
+    background-color: rgb(147, 182, 238);
+    
+  }
+
+  
+  .container {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    display: inline-block;
+    background-color: rgb(172, 149, 172);
+  }
+
+  #countdown {
+    font-size: 1.75rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    background-color: whitesmoke;
+  }
+  
+  
+  
+  

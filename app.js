@@ -1,26 +1,30 @@
-const countdown = () => {
-  const countDate =  new Date('July 7, 2024 00:00:00').getTime;
-  const now = new Date().getTime();
-  const gap = countDate - now;
+function startCountdown() {
+  var vacationDateStart= new Date(document.getElementById("dateInput").value);
+  var offsetTime = vacationDateStart.getTimezoneOffset();
+  console.log(vacationDateStart, offsetTime);
 
-  const seconds = 1000;
+  var vacationDateStart = vacationDateStart.getTime() + (offsetTime * 60000);
+  var currentDate = new Date().getTime(); 
+
+  var timeRemaining = vacationDateStart - currentDate;
+
+  const seconds = 1000
   const minutes = seconds * 60;
   const hours = minutes * 60;
   const days = hours * 24;
 
-  const textDays = Math.floor(gap / days);
-  const textHours = Math.floor((gap % days) / hours);
-  const textMinutes = Math.floor((gap % hours) / minutes);
-  const textSeconds = Math.floor((gap % minutes) / seconds);
-
-  
-
-  document.querySelector(".Days").innerText = textDays;
-  document.querySelector(".Hours").innerText = textHours;
-  document.querySelector(".Minutes").innerText = textMinutes;
-  document.querySelector(".Seconds").innerText = textSeconds;
+  var textDays = Math.floor(timeRemaining / days);
+  var textHours = Math.floor((timeRemaining % days) / hours);
+  var textMinutes = Math.floor((timeRemaining % hours) / minutes);
+  var textSeconds = Math.floor((timeRemaining % minutes) / seconds); 
 
 
-};
+  document.getElementById("countdown").innerHTML = textDays + " Days " + textHours + " Hours "
+  + textMinutes + " Minutes " + textSeconds + " Seconds ";
 
-setInterval(countdown, 1000);
+}
+
+setInterval(startCountdown, 1000);
+
+
+

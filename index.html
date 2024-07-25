@@ -1,50 +1,23 @@
+<!--The first seven lines of code are the basic tags-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>WDWCountdown</title>
-  <!--adding the following lines of code before stylesheet to see if input form will show up on page-->
-  <script>
-    var eventDate;
-    var eventMonth, eventDay, eventYear;
-    function getInput () {
-    eventMonth = prompt("Enter the Month Your Vacation Begins (1 to 12)", "1");
-    eventDay = prompt("Enter the Day Your Vacation Begins (1 to 31)", "1");
-    eventYear = prompt("Enter the Year Your Vacation Begins", "2024");
-    eventDate = new Date(eventMonth +  eventDay +  eventYear);
-    }
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--Now I am identifying the title of the application I am creating and linking the CSS stylesheet-->
+  <title>Countdown Timer</title>
+  <link rel="stylesheet" href="styles.css">
 
-
-
-</script>
-  <link rel="stylesheet" href="./style.css" />
 </head>
-<body onload="getInput ();">
-    <section class="mycountdown">
-      <div>
-        <h2>Counting the Days Until My Walt Disney World Vacation</h2>  
-        <div class="countdown">
-            <div class="container-Days">
-                <h3 class="Days">Time</h3>
-                <h3>Days</h3>
-            </div>
-            <div class="container-Hours">
-                <h3 class="Hours">Time</h3>
-                <h3>Hours</h3>
-            </div>
-            <div class="container-Minutes">
-                <h3 class="Minutes">Time</h3>
-                <h3>Minutes</h3>
-            </div>
-            <div class="container-Seconds">
-            <h3 class="Seconds">Time</h3>
-            <h3>Seconds</h3>
-            </div> 
-        </div>
-    </div> 
-    <img class="Mickey" src="CountdownImages/MickeyMouse.jpg" alt="Mickey Mouse welcomes you home!" width="300" height="300" />
-    </section>
-  <script src="app.js"></script>  
+<body>
+  <div class="container">
+    <h1>Counting the Days to My Walt Disney World Vacation</h1>
+    <input type="date" id="dateInput">
+    <button onclick="startCountdown()">Enter Vacation Start Date</button>
+    <div id="countdown"></div>
+</div>
+<script src="app.js"></script>
 </body>
 </html>
+  

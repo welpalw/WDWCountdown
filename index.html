@@ -1,25 +1,51 @@
-<!--The first seven lines of code are the basic tags-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--Now I am identifying the title of the application I am creating and linking the CSS stylesheet-->
+
   <title>Countdown Timer</title>
   <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
+  <div>
+    <img class="logo" src="images/Transparent logo.png" alt="logo for A Welp Journeys Destination Travel">
+  </div>
   <div class="container">
     <h1>Magical Vacation Countdown</h1>
     <h2>My Walt Disney World Vacation Begins On...</h2>
     <input type="date" id="dateInput">
-    <h2> Only</h2>
+    <h2> That's Only</h2>
     <div id="countdown"></div>
-    <h2>I'm Almost There!</h2>
+    <h2>To the Magic!</h2>
+</div>
+<div class="weatherWidget" ></div>
+<script>
+   window.weatherWidgetConfig =  window.weatherWidgetConfig || [];
+   window.weatherWidgetConfig.push({
+       selector:".weatherWidget",
+       apiKey:"6856BM8BW8WNDFW7BSPKV3NB7",
+       location:"Lake Buena Vista, FL",
+       unitGroup:"us",
+       forecastDays:7,
+       title:"Current WDW Weather", 
+       showTitle:true, 
+       showConditions:true
+   });
+  
+   (function() {
+   var d = document, s = d.createElement('script');
+   s.src = 'https://www.visualcrossing.com/widgets/forecast-simple/weather-forecast-widget-simple.js';
+   s.setAttribute('data-timestamp', +new Date());
+   (d.head || d.body).appendChild(s);
+   })();
+</script>
 </div>
 <script src="app.js"></script>
+<script src="api.js"></script>
 </body>
 </html>
   

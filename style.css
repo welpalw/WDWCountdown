@@ -4,7 +4,7 @@
   
   body {
     font-family: Verdana, Tahoma, Arial, sans-serif;
-    background-image: url("images/castle.jpg"); alt:"Cinderella Castle in shades of blue and pink at Walt Disney World" title="Cinderella Castle in shades of blue and pink at Walt Disney World";
+    background-image: url("images/epcotpalmtree.jpg"); alt:"Spaceship Earth, a silver geodesic dome, with palm trees, at Disney's EPCOT theme park" title="Spaceship Earth at Disney's EPCOT theme park";
     background-size: cover;
     background-position: center center;
     display: flex;
@@ -19,12 +19,23 @@
     font-size: 2rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
     display: inline-block;
-    border-radius: 30px;
-    background-color: rgb(164, 193, 240);
+    border-radius: 10px;
+    background-color: rgb(156,224,218);
     
   }
 
+.logo {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border-radius: 90px;
+    
+    
+
+}
   
   .container {
     text-align: center;
@@ -34,7 +45,7 @@
     margin-right: 2rem;
     display: inline-block;
     border-radius: 5px;
-    background-color: rgb(172, 149, 172);
+    background-color: rgba(54, 91, 109, 255);
   }
 
   #countdown {
@@ -44,8 +55,9 @@
     margin-left: 2rem;
     margin-right: 2rem;
     border-radius: 5px;
-    background-color: whitesmoke;
-  }
+    background-color: rgb(156,224,218);
+  box-shadow: 10px 5px 5px rgb(92,128,180);
+}
   
   
   

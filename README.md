@@ -1,5 +1,4 @@
-# WDWCountdown
-<h1>Walt Disney World Countdown Timer</h1>
+Walt Disney World Countdown Timer
 <p>This is a simple vacation countdown timer to be used by my clients (I own a travel agency) so they can count down
 the days to their Walt Disney World Vacation.  Also included is a current 7-day weather forecast that clients can
 use prior to their vacation so they are aware of current weather conditions.</p>

@@ -1,16 +1,18 @@
+const dateInput = document.getElementById("dateInput");
+
 function startCountdown() {
-  var vacationDateStart= new Date(document.getElementById("dateInput").value);
+
+  const dateValue = dateInput.value;
+  var vacationDateStart = new Date(dateValue);
   var offsetTime = vacationDateStart.getTimezoneOffset();
-  console.log(vacationDateStart, offsetTime);
-  
-//trying to figure out how to store this data so a client doesn't have to re-enter it
 
   var vacationDateStart = vacationDateStart.getTime() + (offsetTime * 60000);
-  var currentDate = new Date().getTime(); 
-  //adding line 11 to try and resolve line 6 note
   localStorage.setItem('vacationDateStart', vacationDateStart);
-var timeRemaining = vacationDateStart - currentDate;
 
+  var currentDate = new Date().getTime(); 
+
+  //adding line 11 to try and resolve line 6 now
+  var timeRemaining = vacationDateStart - currentDate;
 
   const seconds = 1000
   const minutes = seconds * 60;
@@ -21,23 +23,50 @@ var timeRemaining = vacationDateStart - currentDate;
   var textHours = Math.floor((timeRemaining % days) / hours);
   var textMinutes = Math.floor((timeRemaining % hours) / minutes);
   var textSeconds = Math.floor((timeRemaining % minutes) / seconds); 
-
-
-  document.getElementById("countdown").innerHTML = textDays + " Days " + textHours + " Hours "
-  + textMinutes + " Minutes " + textSeconds + " Seconds ";
+  
+  if (isNaN(textDays)) {
+    document.getElementById("countdown").innerHTML = 'Please enter a valid date!'
+  } else {
+    document.getElementById("countdown").innerHTML = textDays + " Days " + textHours + " Hours "
+    + textMinutes + " Minutes " + textSeconds + " Seconds ";
+  }
 
 }
-//adding lines 31-38 to see if this will call the stored date
-document.addEventListener('DOMContentLoaded', function() {
-  const storedDate = localStorage.getItem('VacationDateStart');
-  if (storedDate) {
-     document.getElementById('dateInput').value = storedDate;
+
+const storedTimestamp = localStorage.getItem("vacationDateStart");
+
+let interval;
+
+if (storedTimestamp !== null) {
+  const dateNotFormatted = new Date(parseInt(storedTimestamp));
+
+  let formatted_string = dateNotFormatted.getFullYear();
+  formatted_string += "-";
+
+  if (dateNotFormatted.getMonth() < 9) {
+    formatted_string += "0";
   }
-});
 
-setInterval(startCountdown, 1000);
+  formatted_string += (dateNotFormatted.getMonth() + 1);
+  formatted_string += "-";
 
+  if(dateNotFormatted.getDate() < 10) {
+    formatted_string += "0";
+  }
 
+  formatted_string += dateNotFormatted.getDate();
 
+  dateInput.value = formatted_string;
 
+  setInterval(startCountdown, 1000);
+} else {
 
+  dateInput.onclick = () => {
+
+    if(interval) {
+      interval.clearInterval();
+    }
+
+    interval = setInterval(startCountdown, 1000);
+  }
+}

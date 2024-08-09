@@ -19,7 +19,7 @@ function startCountdown() {
   const hours = minutes * 60;
   const days = hours * 24;
 
-  var textDays = Math.floor(timeRemaining / days);
+  var textDays = Math.floor(timeRemaining / days); 
   var textHours = Math.floor((timeRemaining % days) / hours);
   var textMinutes = Math.floor((timeRemaining % hours) / minutes);
   var textSeconds = Math.floor((timeRemaining % minutes) / seconds); 

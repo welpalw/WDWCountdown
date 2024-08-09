@@ -17,4 +17,3 @@ use prior to their vacation so they are aware of current weather conditions.</p>
 <ul>Clone the repository: git glone https://github.com/smwalw/WDWCountdown.git</ul>
 <ul>Navigate to the project director:  cd project</ul>
 <ul>Install dependencies: npm install</ul>
-

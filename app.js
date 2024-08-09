@@ -1,3 +1,5 @@
+//08.08.24 note: I worked with Jake to resolve the date local storage issue.  But now I have discovered a  
+//daylight savings time issue. I will continue to work on it.
 const dateInput = document.getElementById("dateInput");
 
 function startCountdown() {
@@ -11,7 +13,7 @@ function startCountdown() {
 
   var currentDate = new Date().getTime(); 
 
-  //adding line 11 to try and resolve line 6 now
+  
   var timeRemaining = vacationDateStart - currentDate;
 
   const seconds = 1000
@@ -25,7 +27,7 @@ function startCountdown() {
   var textSeconds = Math.floor((timeRemaining % minutes) / seconds); 
   
   if (isNaN(textDays)) {
-    document.getElementById("countdown").innerHTML = 'Please enter a valid date!'
+    document.getElementById("countdown").innerHTML = "Please enter a valid date!"
   } else {
     document.getElementById("countdown").innerHTML = textDays + " Days " + textHours + " Hours "
     + textMinutes + " Minutes " + textSeconds + " Seconds ";
